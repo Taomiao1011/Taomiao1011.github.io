@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>井冈山景点指引</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                      primary: '#C8102E', // 红色主色调，代表革命精神
+                      secondary: '#1E3A8A', // 深蓝色辅助色，代表天空和湖泊
+                      accent: '#10B981', // 绿色点缀，代表井冈山的自然生态
+                      neutral: '#1F2937', // 深灰色文本
+                      'neutral-light': '#F3F4F6', // 浅灰色背景
+                      },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .bg-transparent {
+                background-color: rgba(0, 0, 0, 0.1); /* 10%的不透明度 */
+            }
+            .scroll-smooth {
+                scroll-behavior: smooth;
+            }
+            .card-hover {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-dark bg-neutral scroll-smooth">
+    <!-- 导航栏 -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="#" class="flex items-center space-x-2">
+                <i class="fa fa-map-marker text-secondary text-2xl"></i>
+                <span class="text-xl font-bold text-primary">井冈山景点指引</span>
+            </a>
+            
+            <!-- 桌面导航 -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="text-dark hover:text-primary transition-colors">景区概况</a>
+                <a href="#tickets" class="text-dark hover:text-primary transition-colors">门票信息</a>
+                <a href="#transport" class="text-dark hover:text-primary transition-colors">交通指南</a>
+                <a href="#scenic-spots" class="text-dark hover:text-primary transition-colors">主要景点</a>
+                <a href="#itinerary" class="text-dark hover:text-primary transition-colors">推荐路线</a>
+                <a href="#tips" class="text-dark hover:text-primary transition-colors">旅游贴士</a>
+            </div>
+            
+            <!-- 移动端菜单按钮 -->
+            <button id="menuBtn" class="md:hidden text-dark focus:outline-none">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+        
+        <!-- 移动端导航菜单 -->
+        <div id="mobileMenu" class="md:hidden hidden bg-white shadow-lg absolute w-full">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
+                <a href="#about" class="text-dark hover:text-primary transition-colors py-2 border-b border-gray-100">景区概况</a>
+                <a href="#tickets" class="text-dark hover:text-primary transition-colors py-2 border-b border-gray-100">门票信息</a>
+                <a href="#transport" class="text-dark hover:text-primary transition-colors py-2 border-b border-gray-100">交通指南</a>
+                <a href="#scenic-spots" class="text-dark hover:text-primary transition-colors py-2 border-b border-gray-100">主要景点</a>
+                <a href="#itinerary" class="text-dark hover:text-primary transition-colors py-2 border-b border-gray-100">推荐路线</a>
+                <a href="#tips" class="text-dark hover:text-primary transition-colors py-2">旅游贴士</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <header class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-hero z-10"></div>
+        <div class="absolute inset-0">
+            <img src="https://ts1.tc.mm.bing.net/th/id/R-C.534c2837345e53772700622fec297cd1?rik=1T52wOWcMUvGcg&riu=http%3a%2f%2fwww.hnpictures.com%2fuploadpic%2f201112%2f2011120323544081.jpg&ehk=AhqcXaGX4MqeU83oksjx5CSlEMiVLFasYn0xsL3EYtY%3d&risl=&pid=ImgRaw&r=0" alt="井冈山风景" class="w-full h-full object-cover">
+        </div>
+        <div class="container mx-auto px-4 z-20 text-center">
+            <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold text-white mb-6 text-shadow animate-fade-in">
+                井冈山<br>革命圣地 · 绿色家园
+            </h1>
+            <p class="text-[clamp(1rem,2vw,1.25rem)] text-white/90 max-w-2xl mx-auto mb-8">
+                走进井冈山，感受红色历史与绿色生态的完美融合
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#scenic-spots" class="bg-white text-primary hover:bg-gray-100 px-8 py-3 rounded-lg font-medium transition-colors shadow-lg">
+                    探索景点
+                </a>
+                <a href="#transport" class="bg-transparent border-2 border-white text-white hover:bg-white/10 px-8 py-3 rounded-lg font-medium transition-colors">
+                    交通指南
+                </a>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
+            <a href="#about" class="text-white/80 hover:text-white">
+                <i class="fa fa-angle-down text-3xl"></i>
+            </a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-16">
+        <!-- 景区概况 -->
+        <section id="about" class="py-16 scroll-mt-20">
+            <div class="text-center mb-12">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">景区概况</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <div class="space-y-6">
+                    <p class="text-lg leading-relaxed">
+                        井冈山位于江西省吉安市境内，地处湘东赣西边界、南岭北支、罗霄山脉中段。井冈山风景名胜区是国家5A级旅游景区、国家级风景名胜区、国家级自然保护区，集人文景观、自然风光和高山田园为一体。
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        井冈山景区范围333平方公里，有11大景区、76处景点、460多个景物景观。这里千峰竞秀，万壑争流，苍茫林海，飞瀑流泉，有气势磅礴的云海、瑰丽灿烂的日出、十里绵延的杜鹃长廊和蜚声中外的井冈山主峰。
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mt-8">
+                        <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-primary">
+                            <h3 class="font-bold text-lg mb-2">地理位置</h3>
+                            <p>江西省吉安市井冈山市</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-secondary">
+                            <h3 class="font-bold text-lg mb-2">景区面积</h3>
+                            <p>333平方公里</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-accent">
+                            <h3 class="font-bold text-lg mb-2">海拔高度</h3>
+                            <p>最高1779.4米</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-primary">
+                            <h3 class="font-bold text-lg mb-2">景区级别</h3>
+                            <p>国家5A级景区</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative rounded-xl overflow-hidden shadow-xl">
+                    <img src="https://picsum.photos/id/1018/800/600" alt="井冈山全景" class="w-full h-auto rounded-xl">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
+                        <div class="p-6 text-white">
+                            <h3 class="text-xl font-bold mb-2">井冈山主峰</h3>
+                            <p>海拔1597.6米，井冈山的标志性景观</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 门票信息 -->
+        <section id="tickets" class="py-16 bg-white rounded-2xl shadow-sm scroll-mt-20">
+            <div class="text-center mb-12">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">门票信息</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-neutral rounded-xl p-8 shadow-sm card-hover">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fa fa-ticket"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">全景区通票</h3>
+                    <div class="text-3xl font-bold mb-6">
+                        <span class="text-secondary">¥165</span>
+                        <span class="text-sm text-gray-500 font-normal">/人</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="fa fa-check text-accent mt-1 mr-2"></i>
+                            <span>包含22个核心景点</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check text-accent mt-1 mr-2"></i>
+                            <span>有效期5天</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check text-accent mt-1 mr-2"></i>
+                            <span>可多次入园</span>
+                        </li>
+                    </ul>
+                    <p class="text-sm text-gray-500 mb-6">
+                        11月16日—次年2月15日，执行淡季门票150元/人
+                    </p>
+                </div>
+                
+                <div class="bg-white border-2 border-primary rounded-xl p-8 shadow-md card-hover transform scale-105 relative z-10">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-white text-xs font-bold px-4 py-1 rounded-full">
+                        推荐选择
+                    </div>
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fa fa-bus"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">门票+观光车票</h3>
+                    <div class="text-3xl font-bold mb-6">
+                        <span class="text-secondary">¥245</span>
+                        <span class="text-sm text-gray-500 font-normal">/人</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="fa fa-check text-accent mt-1 mr-2"></i>
+                            <span>全景区通票</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check text-accent mt-1 mr-2"></i>
+                            <span>景区观光车票</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check text-accent mt-1 mr-2"></i>
+                            <span>有效期5天</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check text-accent mt-1 mr-2"></i>
+                            <span>自由乘坐各景点班车</span>
+                        </li>
+                    </ul>
+                    <p class="text-sm text-gray-500 mb-6">
+                        11月16日—次年2月15日，执行淡季价格230元/人
+                    </p>
+                </div>
+                
+                <div class="bg-neutral rounded-xl p-8 shadow-sm card-hover">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fa fa-map-o"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">单景点门票</h3>
+                    <div class="text-3xl font-bold mb-6">
+                        <span class="text-secondary">¥40-60</span>
+                        <span class="text-sm text-gray-500 font-normal">/景点</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="fa fa-check text-accent mt-1 mr-2"></i>
+                            <span>单个景点参观</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check text-accent mt-1 mr-2"></i>
+                            <span>部分景点需单独购票</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check text-accent mt-1 mr-2"></i>
+                            <span>有效期1天</span>
+                        </li>
+                    </ul>
+                    <p class="text-sm text-gray-500 mb-6">
+                        如龙潭瀑布群、黄洋界哨口等景点可单独购票
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-16 bg-neutral rounded-xl p-8">
+                <h3 class="text-xl font-bold mb-6">购票须知</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-bold text-primary mb-3">优惠政策</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fa fa-info-circle text-primary mt-1 mr-2"></i>
+                                <span>65周岁以上老年人、残疾人、现役军人凭有效证件免门票</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-info-circle text-primary mt-1 mr-2"></i>
+                                <span>6-18周岁未成年人、全日制大学本科及以下学历学生凭有效证件享受半价优惠</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-info-circle text-primary mt-1 mr-2"></i>
+                                <span>记者、国家级摄影协会会员凭有效证件免门票</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-primary mb-3">购票方式</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fa fa-info-circle text-primary mt-1 mr-2"></i>
+                                <span>景区游客服务中心现场购票</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-info-circle text-primary mt-1 mr-2"></i>
+                                <span>官方网站或官方微信公众号在线预订</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-info-circle text-primary mt-1 mr-2"></i>
+                                <span>各大旅游平台代理销售</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 交通指南 -->
+        <section id="transport" class="py-16 scroll-mt-20">
+            <div class="text-center mb-12">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">交通指南</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-10">
+                <div>
+                    <h3 class="text-xl font-bold mb-6">外部交通</h3>
+                    
+                    <div class="space-y-8">
+                        <div class="bg-white rounded-xl p-6 shadow-sm flex">
+                            <div class="bg-primary/10 p-4 rounded-lg mr-6">
+                                <i class="fa fa-plane text-primary text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2">飞机</h4>
+                                <p class="text-gray-600 mb-3">可乘飞机至井冈山机场，再转乘前往景区的交通工具。</p>
+                                <ul class="text-gray-600 space-y-1">
+                                    <li>井冈山机场位于泰和县螺溪镇，距茨坪景区约80公里</li>
+                                    <li>机场可乘坐直达茨坪的旅游专线车，车程约1.5小时</li>
+                                    <li>也可乘坐机场大巴到吉安市区，再转乘前往井冈山的班车</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-xl p-6 shadow-sm flex">
+                            <div class="bg-primary/10 p-4 rounded-lg mr-6">
+                                <i class="fa fa-train text-primary text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2">火车</h4>
+                                <p class="text-gray-600 mb-3">乘坐火车至井冈山火车站，然后可选择乘坐98路公交直达茨坪，或转乘其他大巴前往景区。</p>
+                                <ul class="text-gray-600 space-y-1">
+                                    <li>井冈山火车站位于井冈山市新城区，距茨坪景区约35公里</li>
+                                    <li>98路公交车运行时间为6:30-18:30，约30分钟一班</li>
+                                    <li>也可乘坐出租车或网约车前往景区，车程约40分钟</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-xl p-6 shadow-sm flex">
+                            <div class="bg-primary/10 p-4 rounded-lg mr-6">
+                                <i class="fa fa-car text-primary text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2">自驾</h4>
+                                <p class="text-gray-600 mb-3">泰井高速、319国道可直达，自驾导航到井冈山风景名胜区-游客服务中心。</p>
+                                <ul class="text-gray-600 space-y-1">
+                                    <li>从南昌出发：昌樟高速→沪昆高速→泰井高速→井冈山，全程约350公里，车程约4小时</li>
+                                    <li>从长沙出发：长株潭高速→沪昆高速→武深高速→泰井高速→井冈山，全程约320公里，车程约4小时</li>
+                                    <li>景区内部分路段较窄，驾驶时需注意安全</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-6">内部交通</h3>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-sm mb-8">
+                        <h4 class="font-bold text-lg mb-4">景区观光车</h4>
+                        <p class="text-gray-600 mb-4">景区内主要依靠观光车出行，设有固定的线路和站点，方便游客前往各个景点。</p>
+                        <ul class="text-gray-600 space-y-2 mb-4">
+                            <li>观光车票80元/人，有效期5天</li>
+                            <li>运行时间：夏季7:00-18:00，冬季7:30-17:30</li>
+                            <li>主要线路覆盖所有核心景点，班次频繁</li>
+                        </ul>
+                        <div class="bg-neutral p-4 rounded-lg">
+                            <p class="text-primary font-medium">重要提示：</p>
+                            <p class="text-gray-600">景区实行交通管制，游客车辆进入景点实行总量管控，各景点停车场承载量达到峰值时，须将自带车辆停放在景区游客服务中心停车场或其他允许停车的场地，购买观光车票后换乘观光车进入景点。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-sm mb-8">
+                        <h4 class="font-bold text-lg mb-4">出租车</h4>
+                        <p class="text-gray-600">茨坪镇内出租车起步价为7元/2公里，之后每公里1.6元。从茨坪到各景点的价格可与司机协商。</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-sm">
+                        <h4 class="font-bold text-lg mb-4">徒步</h4>
+                        <p class="text-gray-600">在茨坪镇及部分景点内，徒步是很好的选择，可以更近距离感受井冈山的美景和历史氛围。</p>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <h4 class="font-bold text-lg mb-4">景区交通图</h4>
+                        <div class="bg-neutral rounded-xl p-6 h-80 flex items-center justify-center">
+                            <img src="https://picsum.photos/id/1048/800/400" alt="井冈山景区交通图" class="w-full h-full object-cover rounded-lg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 主要景点 -->
+        <section id="scenic-spots" class="py-16 bg-white rounded-2xl shadow-sm scroll-mt-20">
+            <div class="text-center mb-12">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">主要景点</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto"></div>
+            </div>
+            
+            <!-- 景点筛选器 -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="filter-btn bg-primary text-white px-6 py-2 rounded-full" data-filter="all">全部景点</button>
+                <button class="filter-btn bg-white text-dark hover:bg-primary/10 px-6 py-2 rounded-full transition-colors" data-filter="history">红色景点</button>
+                <button class="filter-btn bg-white text-dark hover:bg-primary/10 px-6 py-2 rounded-full transition-colors" data-filter="nature">自然景观</button>
+                <button class="filter-btn bg-white text-dark hover:bg-primary/10 px-6 py-2 rounded-full transition-colors" data-filter="culture">人文景点</button>
+            </div>
+            
+            <!-- 景点列表 -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="scenic-spots-container">
+                <!-- 景点1 -->
+                <div class="bg-neutral rounded-xl overflow-hidden shadow-sm card-hover" data-category="history">
+                    <div class="relative h-60">
+                        <img src="https://picsum.photos/id/1015/600/400" alt="井冈山革命博物馆" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-secondary text-white text-xs font-bold px-3 py-1 rounded-full">
+                            红色景点
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">井冈山革命博物馆</h3>
+                        <p class="text-gray-600 mb-4">全面展示井冈山革命历史，馆内珍藏大量历史文物和珍贵资料，是了解井冈山革命斗争的重要窗口。</p>
+                        <div class="flex items-center text-sm text-gray-500 mb-4">
+                            <div class="flex items-center mr-4">
+                                <i class="fa fa-clock-o mr-1"></i>
+                                <span>建议游览：2小时</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa fa-map-marker mr-1"></i>
+                                <span>茨坪景区</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold">免费开放</span>
+                            <button class="view-details text-dark hover:text-primary transition-colors font-medium">
+                                查看详情 <i class="fa fa-angle-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 景点2 -->
+                <div class="bg-neutral rounded-xl overflow-hidden shadow-sm card-hover" data-category="history">
+                    <div class="relative h-60">
+                        <img src="https://picsum.photos/id/1016/600/400" alt="井冈山革命烈士陵园" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-secondary text-white text-xs font-bold px-3 py-1 rounded-full">
+                            红色景点
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">井冈山革命烈士陵园</h3>
+                        <p class="text-gray-600 mb-4">又称北山烈士陵园，由纪念碑、纪念堂、雕塑园、碑林四部分组成，是缅怀革命先烈的重要场所。</p>
+                        <div class="flex items-center text-sm text-gray-500 mb-4">
+                            <div class="flex items-center mr-4">
+                                <i class="fa fa-clock-o mr-1"></i>
+                                <span>建议游览：1.5小时</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa fa-map-marker mr-1"></i>
+                                <span>茨坪景区</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold">免费开放</span>
+                            <button class="view-details text-dark hover:text-primary transition-colors font-medium">
+                                查看详情 <i class="fa fa-angle-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 景点3 -->
+                <div class="bg-neutral rounded-xl overflow-hidden shadow-sm card-hover" data-category="history">
+                    <div class="relative h-60">
+                        <img src="https://picsum.photos/id/1019/600/400" alt="茨坪毛泽东旧居" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-secondary text-white text-xs font-bold px-3 py-1 rounded-full">
+                            红色景点
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">茨坪毛泽东旧居</h3>
+                        <p class="text-gray-600 mb-4">1927年10月至1929年1月，毛泽东同志在此居住和工作，是井冈山革命斗争时期毛泽东同志的重要居住地。</p>
+                        <div class="flex items-center text-sm text-gray-500 mb-4">
+                            <div class="flex items-center mr-4">
+                                <i class="fa fa-clock-o mr-1"></i>
+                                <span>建议游览：1小时</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa fa-map-marker mr-1"></i>
+                                <span>茨坪景区</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold">包含在通票内</span>
+                            <button class="view-details text-dark hover:text-primary transition-colors font-medium">
+                                查看详情 <i class="fa fa-angle-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 景点4 -->
+                <div class="bg-neutral rounded-xl overflow-hidden shadow-sm card-hover" data-category="nature">
+                    <div class="relative h-60">
+                        <img src="https://picsum.photos/id/1039/600/400" alt="龙潭瀑布群" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full">
+                            自然景观
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">龙潭瀑布群</h3>
+                        <p class="text-gray-600 mb-4">龙潭景区位于茨坪西北7公里处，由五龙潭和金狮面两个景区组成，以瀑布、深潭和奇石著称。</p>
+                        <div class="flex items-center text-sm text-gray-500 mb-4">
+                            <div class="flex items-center mr-4">
+                                <i class="fa fa-clock-o mr-1"></i>
+                                <span>建议游览：2-3小时</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa fa-map-marker mr-1"></i>
+                                <span>茨坪景区</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold">包含在通票内</span>
+                            <button class="view-details text-dark hover:text-primary transition-colors font-medium">
+                                查看详情 <i class="fa fa-angle-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 景点5 -->
+                <div class="bg-neutral rounded-xl overflow-hidden shadow-sm card-hover" data-category="nature">
+                    <div class="relative h-60">
+                        <img src="https://picsum.photos/id/1043/600/400" alt="黄洋界" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full">
+                            自然景观
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">黄洋界</h3>
+                        <p class="text-gray-600 mb-4">黄洋界海拔1343米，是井冈山五大哨口之一，这里峰峦叠嶂，地势险峻，气象万千，时常云雾缭绕。</p>
+                        <div class="flex items-center text-sm text-gray-500 mb-4">
+                            <div class="flex items-center mr-4">
+                                <i class="fa fa-clock-o mr-1"></i>
+                                <span>建议游览：1.5小时</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa fa-map-marker mr-1"></i>
+                                <span>黄洋界景区</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold">包含在通票内</span>
+                            <button class="view-details text-dark hover:text-primary transition-colors font-medium">
+                                查看详情 <i class="fa fa-angle-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 景点6 -->
+                <div class="bg-neutral rounded-xl overflow-hidden shadow-sm card-hover" data-category="culture">
+                    <div class="relative h-60">
+                        <img src="https://picsum.photos/id/1050/600/400" alt="大井毛泽东旧居" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">
+                            人文景点
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">大井毛泽东旧居</h3>
+                        <p class="text-gray-600 mb-4">大井是井冈山革命根据地的重要组成部分，毛泽东、朱德等曾在此居住，保存有大量革命历史遗迹。</p>
+                        <div class="flex items-center text-sm text-gray-500 mb-4">
+                            <div class="flex items-center mr-4">
+                                <i class="fa fa-clock-o mr-1"></i>
+                                <span>建议游览：1.5小时</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa fa-map-marker mr-1"></i>
+                                <span>大井景区</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold">包含在通票内</span>
+                            <button class="view-details text-dark hover:text-primary transition-colors font-medium">
+                                查看详情 <i class="fa fa-angle-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button id="load-more" class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-medium transition-colors shadow-sm">
+                    加载更多景点 <i class="fa fa-refresh ml-1"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- 推荐路线 -->
+        <section id="itinerary" class="py-16 scroll-mt-20">
+            <div class="text-center mb-12">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">推荐路线</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                    <div class="h-60">
+                        <img src="https://picsum.photos/id/1035/800/400" alt="经典红色一日游" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xl font-bold">经典红色一日游</h3>
+                            <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-medium">1天</span>
+                        </div>
+                        <p class="text-gray-600 mb-6">
+                            这条路线涵盖了井冈山最重要的红色景点，适合时间有限但想深入了解井冈山革命历史的游客。
+                        </p>
+                        
+                        <div class="space-y-4 mb-6">
+                            <div class="flex items-start">
+                                <div class="bg-primary/10 rounded-full w-8 h-8 flex items-center justify-center text-primary font-bold mr-4 mt-1">
+                                    1
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">井冈山革命博物馆</h4>
+                                    <p class="text-gray-600 text-sm">上午8:30-11:30，全面了解井冈山革命历史</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-primary/10 rounded-full w-8 h-8 flex items-center justify-center text-primary font-bold mr-4 mt-1">
+                                    2
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">井冈山革命烈士陵园</h4>
+                                    <p class="text-gray-600 text-sm">上午11:40-13:00，缅怀革命先烈</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-primary/10 rounded-full w-8 h-8 flex items-center justify-center text-primary font-bold mr-4 mt-1">
+                                    3
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">茨坪毛泽东旧居</h4>
+                                    <p class="text-gray-600 text-sm">下午13:30-14:30，了解毛泽东在井冈山的革命活动</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-primary/10 rounded-full w-8 h-8 flex items-center justify-center text-primary font-bold mr-4 mt-1">
+                                    4
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">黄洋界哨口</h4>
+                                    <p class="text-gray-600 text-sm">下午15:00-17:00，参观著名的黄洋界保卫战遗址</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center">
+                                <span class="text-primary font-bold mr-2">路线强度：</span>
+                                <div class="flex">
+                                    <i class="fa fa-circle text-primary"></i>
+                                    <i class="fa fa-circle text-primary"></i>
+                                    <i class="fa fa-circle-o text-primary"></i>
+                                    <i class="fa fa-circle-o text-primary"></i>
+                                    <i class="fa fa-circle-o text-primary"></i>
+                                </div>
+                            </div>
+                            <button class="text-primary hover:text-primary/80 font-medium transition-colors">
+                                查看详情 <i class="fa fa-angle-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                    <div class="h-60">
+                        <img src="https://picsum.photos/id/1036/800/400" alt="深度体验二日游" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xl font-bold">深度体验二日游</h3>
+                            <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-medium">2天</span>
+                        </div>
+                        <p class="text-gray-600 mb-6">
+                            这条路线兼顾了红色历史和自然风光，让您更全面地体验井冈山的魅力，适合时间充裕的游客。
+                        </p>
+                        
+                        <div class="space-y-4 mb-6">
+                            <div class="flex items-start">
+                                <div class="bg-primary/10 rounded-full w-8 h-8 flex items-center justify-center text-primary font-bold mr-4 mt-1">
+                                    1
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">第一天：红色历史之旅</h4>
+                                    <p class="text-gray-600 text-sm">井冈山革命博物馆 → 井冈山革命烈士陵园 → 茨坪毛泽东旧居 → 大井毛泽东旧居</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-primary/10 rounded-full w-8 h-8 flex items-center justify-center text-primary font-bold mr-4 mt-1">
+                                    2
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">第二天：自然风光之旅</h4>
+                                    <p class="text-gray-600 text-sm">龙潭瀑布群 → 黄洋界哨口 → 笔架山景区 → 井冈山主峰</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="bg-neutral p-4 rounded-lg">
+                                <h4 class="font-bold text-sm mb-2">第一天住宿</h4>
+                                <p class="text-gray-600 text-sm">推荐住在茨坪镇，交通便利，餐饮选择多</p>
+                            </div>
+                            <div class="bg-neutral p-4 rounded-lg">
+                                <h4 class="font-bold text-sm mb-2">第二天住宿</h4>
+                                <p class="text-gray-600 text-sm">可选择继续住在茨坪镇或返回市区</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center">
+                                <span class="text-primary font-bold mr-2">路线强度：</span>
+                                <div class="flex">
+                                    <i class="fa fa-circle text-primary"></i>
+                                    <i class="fa fa-circle text-primary"></i>
+                                    <i class="fa fa-circle text-primary"></i>
+                                    <i class="fa fa-circle-o text-primary"></i>
+                                    <i class="fa fa-circle-o text-primary"></i>
+                                </div>
+                            </div>
+                            <button class="text-primary hover:text-primary/80 font-medium transition-colors">
+                                查看详情 <i class="fa fa-angle-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 bg-white rounded-xl p-8 shadow-sm">
+                <h3 class="text-xl font-bold mb-6">定制路线建议</h3>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-neutral p-6 rounded-lg">
+                        <div class="text-primary text-3xl mb-4">
+                            <i class="fa fa-users"></i>
+                        </div>
+                        <h4 class="font-bold text-lg mb-3">亲子游</h4>
+                        <p class="text-gray-600 mb-4">
+                            推荐参观井冈山革命博物馆、井冈山革命烈士陵园，可参加红色教育活动，寓教于乐。
+                        </p>
+                        <a href="#" class="text-primary hover:text-primary/80 font-medium transition-colors">
+                            获取详细路线 <i class="fa fa-long-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="bg-neutral p-6 rounded-lg">
+                        <div class="text-primary text-3xl mb-4">
+                            <i class="fa fa-heart"></i>
+                        </div>
+                        <h4 class="font-bold text-lg mb-3">情侣游</h4>
+                        <p class="text-gray-600 mb-4">
+                            推荐龙潭瀑布群、笔架山景区，欣赏自然风光，还可参加浪漫的夜间实景演出《井冈山》。
+                        </p>
+                        <a href="#" class="text-primary hover:text-primary/80 font-medium transition-colors">
+                            获取详细路线 <i class="fa fa-long-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="bg-neutral p-6 rounded-lg">
+                        <div class="text-primary text-3xl mb-4">
+                            <i class="fa fa-camera"></i>
+                        </div>
+                        <h4 class="font-bold text-lg mb-3">摄影游</h4>
+                        <p class="text-gray-600 mb-4">
+                            推荐黄洋界日出、龙潭瀑布、井冈山主峰，最佳拍摄时间为清晨和傍晚。
+                        </p>
+                        <a href="#" class="text-primary hover:text-primary/80 font-medium transition-colors">
+                            获取详细路线 <i class="fa fa-long-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 旅游贴士 -->
+        <section id="tips" class="py-16 bg-white rounded-2xl shadow-sm scroll-mt-20">
+            <div class="text-center mb-12">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">旅游贴士</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-10">
+                <div>
+                    <h3 class="text-xl font-bold mb-6">最佳旅游时间</h3>
+                    
+                    <div class="bg-neutral rounded-xl p-6 mb-8">
+                        <h4 class="font-bold text-lg mb-4">春季 (3-5月)</h4>
+                        <p class="text-gray-600 mb-4">
+                            春季是井冈山杜鹃花盛开的季节，漫山遍野的杜鹃花美不胜收，是观赏杜鹃花的最佳时间。
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">适合观赏花卉</span>
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">气候宜人</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-neutral rounded-xl p-6 mb-8">
+                        <h4 class="font-bold text-lg mb-4">夏季 (6-8月)</h4>
+                        <p class="text-gray-600 mb-4">
+                            夏季井冈山气温凉爽，是避暑胜地，适合避暑和户外活动，但此时也是雨季，出行需携带雨具。
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">避暑胜地</span>
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">水量充沛</span>
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">多雨</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-neutral rounded-xl p-6 mb-8">
+                        <h4 class="font-bold text-lg mb-4">秋季 (9-11月)</h4>
+                        <p class="text-gray-600 mb-4">
+                            秋季天气晴朗，能见度高，适合观赏日出、云海等景观，也是登山的好时机。
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">天气晴朗</span>
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">适合登山</span>
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">观云海</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-neutral rounded-xl p-6">
+                        <h4 class="font-bold text-lg mb-4">冬季 (12-2月)</h4>
+                        <p class="text-gray-600 mb-4">
+                            冬季井冈山气温较低，有时会下雪，可以欣赏到雪景，但需注意保暖。
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">雪景</span>
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">气温低</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-6">注意事项</h3>
+                    
+                    <div class="bg-neutral rounded-xl p-6 mb-8">
+                        <h4 class="font-bold text-lg mb-4 flex items-center">
+                            <i class="fa fa-info-circle text-primary mr-2"></i>
+                            景区游览注意
+                        </h4>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-accent mt-1 mr-2"></i>
+                                <span>景区内游览建议穿舒适的鞋子，部分景点需要步行较长距离</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-accent mt-1 mr-2"></i>
+                                <span>遵守景区规定，不随意攀爬、采摘或破坏环境</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-accent mt-1 mr-2"></i>
+                                <span>在革命历史景点参观时，请保持庄重，不要大声喧哗</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-accent mt-1 mr-2"></i>
+                                <span>景区内部分路段较陡，游玩时请注意安全，尤其在雨天</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-neutral rounded-xl p-6 mb-8">
+                        <h4 class="font-bold text-lg mb-4 flex items-center">
+                            <i class="fa fa-suitcase text-primary mr-2"></i>
+                            装备准备
+                        </h4>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-accent mt-1 mr-2"></i>
+                                <span>舒适的运动鞋或登山鞋，便于长时间行走</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-accent mt-1 mr-2"></i>
+                                <span>根据季节携带合适的衣物，夏季注意防晒，冬季注意保暖</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-accent mt-1 mr-2"></i>
+                                <span>随身携带雨具，山区天气多变，常有阵雨</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-accent mt-1 mr-2"></i>
+                                <span>准备适量的饮用水和零食，部分景区内餐饮设施较少</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-neutral rounded-xl p-6 mb-8">
+                        <h4 class="font-bold text-lg mb-4 flex items-center">
+                            <i class="fa fa-medkit text-primary mr-2"></i>
+                            健康安全
+                        </h4>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-accent mt-1 mr-2"></i>
+                                <span>井冈山海拔较高，部分游客可能会有轻微高原反应，注意休息</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-accent mt-1 mr-2"></i>
+                                <span>夏季山区蚊虫较多，建议携带防蚊用品</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-accent mt-1 mr-2"></i>
+                                <span>建议携带常用药品，如感冒药、肠胃药等</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-accent mt-1 mr-2"></i>
+                                <span>在景区内如遇紧急情况，可拨打景区救援电话：0796-6552222</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-neutral rounded-xl p-6">
+                        <h4 class="font-bold text-lg mb-4 flex items-center">
+                            <i class="fa fa-phone text-primary mr-2"></i>
+                            紧急联系方式
+                        </h4>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fa fa-phone-square text-accent mt-1 mr-2"></i>
+                                <span>景区咨询电话：0796-6552222</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-ambulance text-accent mt-1 mr-2"></i>
+                                <span>急救电话：120</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-police text-accent mt-1 mr-2"></i>
+                                <span>报警电话：110</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-fire text-accent mt-1 mr-2"></i>
+                                <span>火警电话：119</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-10 mb-12">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <i class="fa fa-map-marker text-secondary text-2xl"></i>
+                        <span class="text-xl font-bold">井冈山景点指引</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        探索革命圣地，领略自然风光，感受红色文化与绿色生态的完美融合。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-gray-800 hover:bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors"><a href="#" class="bg-gray-800 hover:bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                            <i class="fa fa-weixin"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 hover:bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 hover:bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                            <i class="fa fa-youtube-play"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">快速链接</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">景区概况</a></li>
+                        <li><a href="#tickets" class="text-gray-400 hover:text-white transition-colors">门票信息</a></li>
+                        <li><a href="#transport" class="text-gray-400 hover:text-white transition-colors">交通指南</a></li>
+                        <li><a href="#scenic-spots" class="text-gray-400 hover:text-white transition-colors">主要景点</a></li>
+                        <li><a href="#itinerary" class="text-gray-400 hover:text-white transition-colors">推荐路线</a></li>
+                        <li><a href="#tips" class="text-gray-400 hover:text-white transition-colors">旅游贴士</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">联系我们</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker text-secondary mt-1 mr-3"></i>
+                            <span class="text-gray-400">江西省吉安市井冈山市茨坪镇</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-phone text-secondary mt-1 mr-3"></i>
+                            <span class="text-gray-400">景区咨询：0796-6552222</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-envelope text-secondary mt-1 mr-3"></i>
+                            <span class="text-gray-400">info@jinggangshan-tourism.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-clock-o text-secondary mt-1 mr-3"></i>
+                            <span class="text-gray-400">工作时间：8:00-18:00</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">订阅通讯</h3>
+                    <p class="text-gray-400 mb-4">
+                        订阅我们的电子通讯，获取最新的景区资讯和优惠信息。
+                    </p>
+                    <form class="mb-4">
+                        <div class="flex">
+                            <input type="email" placeholder="您的邮箱地址" class="bg-gray-800 text-white px-4 py-2 rounded-l-lg w-full focus:outline-none focus:ring-2 focus:ring-primary">
+                            <button type="submit" class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-r-lg transition-colors">
+                                订阅
+                            </button>
+                        </div>
+                    </form>
+                    <p class="text-gray-500 text-sm">
+                        我们尊重您的隐私，不会向第三方分享您的信息。
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-500 text-sm mb-4 md:mb-0">
+                        &copy; 2025 井冈山景点指引. 保留所有权利.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors">隐私政策</a>
+                        <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors">使用条款</a>
+                        <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors">网站地图</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 景点详情模态框 -->
+    <div id="scenic-modal" class="fixed inset-0 bg-black/70 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-auto">
+            <div class="relative">
+                <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 z-10">
+                    <i class="fa fa-times text-xl"></i>
+                </button>
+                <div class="h-64 md:h-80">
+                    <img id="modal-image" src="https://picsum.photos/id/1015/1200/600" alt="景点图片" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <h3 id="modal-title" class="text-2xl font-bold mb-4">井冈山革命博物馆</h3>
+                    <div class="flex flex-wrap gap-3 mb-6">
+                        <span id="modal-category" class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-medium">红色景点</span>
+                        <span id="modal-location" class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
+                            <i class="fa fa-map-marker mr-1"></i> 茨坪景区
+                        </span>
+                        <span id="modal-time" class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm font-medium">
+                            <i class="fa fa-clock-o mr-1"></i> 建议游览：2小时
+                        </span>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h4 class="font-bold text-lg mb-3">景点介绍</h4>
+                        <p id="modal-description" class="text-gray-600 leading-relaxed">
+                            井冈山革命博物馆是中国第一个地方性革命史类博物馆，于1959年建成开放。馆内珍藏着大量珍贵的革命文物和历史资料，全面展示了井冈山革命斗争的光辉历程。
+                            <br><br>
+                            博物馆占地面积1.782公顷，总建筑面积20030平方米，其中展厅面积8436平方米。展览以"井冈山革命斗争"为主题，分为"序厅"、"井冈山革命根据地的创立"、"井冈山革命根据地的发展"、"井冈山革命根据地的巩固"、"井冈山精神永放光芒"五个部分。
+                            <br><br>
+                            通过文物、图片、雕塑、场景复原、多媒体等多种展示手段，生动再现了毛泽东、朱德等老一辈无产阶级革命家在井冈山创建第一个农村革命根据地的艰苦斗争历程，全面诠释了井冈山精神的内涵和价值。
+                        </p>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h4 class="font-bold text-lg mb-3">历史背景</h4>
+                        <p class="text-gray-600 leading-relaxed">
+                            1927年大革命失败后，中国共产党开始独立领导武装斗争。毛泽东领导的秋收起义部队和朱德、陈毅领导的南昌起义部分部队在井冈山胜利会师，创建了中国第一个农村革命根据地。
+                            <br><br>
+                            井冈山革命根据地的建立，为中国革命开辟了一条以农村包围城市、武装夺取政权的正确道路，是中国革命史上的一个重要里程碑。
+                        </p>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h4 class="font-bold text-lg mb-3">参观信息</h4>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <h5 class="font-medium mb-2">开放时间</h5>
+                                <p class="text-gray-600">
+                                    夏季（5月1日-10月31日）：8:00-17:30（17:00停止入场）<br>
+                                    冬季（11月1日-次年4月30日）：8:30-17:00（16:30停止入场）<br>
+                                    每周一闭馆（法定节假日除外）
+                                </p>
+                            </div>
+                            <div>
+                                <h5 class="font-medium mb-2">门票信息</h5>
+                                <p class="text-gray-600">
+                                    免费开放，但需提前在官方网站或微信公众号预约<br>
+                                    团队参观需提前24小时预约
+                                </p>
+                            </div>
+                            <div>
+                                <h5 class="font-medium mb-2">交通指南</h5>
+                                <p class="text-gray-600">
+                                    乘坐景区观光车到博物馆站下车即到<br>
+                                    从茨坪镇中心步行约10分钟可达
+                                </p>
+                            </div>
+                            <div>
+                                <h5 class="font-medium mb-2">注意事项</h5>
+                                <p class="text-gray-600">
+                                    参观时请保持安静，不要触摸展品<br>
+                                    馆内禁止拍照<br>
+                                    禁止携带易燃、易爆物品和食品入内
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-end">
+                        <button id="close-modal-btn" class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-lg font-medium transition-colors">
+                            关闭
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 导航栏滚动效果
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('py-2', 'shadow-md');
+                navbar.classList.remove('py-3', 'shadow-sm');
+            } else {
+                navbar.classList.add('py-3', 'shadow-sm');
+                navbar.classList.remove('py-2', 'shadow-md');
+            }
+        });
+
+        // 移动端菜单切换
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuBtn.innerHTML = '<i class="fa fa-bars text-xl"></i>';
+            } else {
+                menuBtn.innerHTML = '<i class="fa fa-times text-xl"></i>';
+            }
+        });
+
+        // 景点筛选功能
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const scenicItems = document.querySelectorAll('#scenic-spots-container > div');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // 移除所有按钮的活动状态
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-primary', 'text-white');
+                    b.classList.add('bg-white', 'text-dark', 'hover:bg-primary/10');
+                });
+                
+                // 添加当前按钮的活动状态
+                btn.classList.remove('bg-white', 'text-dark', 'hover:bg-primary/10');
+                btn.classList.add('bg-primary', 'text-white');
+                
+                const filter = btn.getAttribute('data-filter');
+                
+                scenicItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.classList.remove('hidden');
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, 50);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            item.classList.add('hidden');
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // 景点详情模态框
+        const modal = document.getElementById('scenic-modal');
+        const closeModal = document.getElementById('close-modal');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+        const viewDetailsBtns = document.querySelectorAll('.view-details');
+        
+        viewDetailsBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        closeModal.addEventListener('click', () => {
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+        
+        closeModalBtn.addEventListener('click', () => {
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+        
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // 加载更多景点按钮
+        const loadMoreBtn = document.getElementById('load-more');
+        let isLoading = false;
+        
+        loadMoreBtn.addEventListener('click', () => {
+            if (isLoading) return;
+            
+            isLoading = true;
+            loadMoreBtn.innerHTML = '<i class="fa fa-spinner fa-spin mr-2"></i> 加载中...';
+            
+            // 模拟加载延迟
+            setTimeout(() => {
+                // 创建新景点
+                const newSpots = [
+                    {
+                        name: '笔架山景区',
+                        image: 'https://picsum.photos/id/1040/600/400',
+                        category: 'nature',
+                        description: '笔架山景区位于井冈山的西南面，以峰峦叠嶂、峡谷幽深、溪流清澈著称，是观云海、日出的绝佳地点。',
+                        time: '建议游览：3-4小时',
+                        location: '笔架山景区',
+                        price: '包含在通票内'
+                    },
+                    {
+                        name: '茅坪景区',
+                        image: 'https://picsum.photos/id/1041/600/400',
+                        category: 'history',
+                        description: '茅坪景区是井冈山革命根据地的重要组成部分，保存有大量革命历史遗迹，如八角楼、中共湘赣边界第一次代表大会会址等。',
+                        time: '建议游览：2小时',
+                        location: '茅坪景区',
+                        price: '包含在通票内'
+                    },
+                    {
+                        name: '井冈山主峰',
+                        image: 'https://picsum.photos/id/1042/600/400',
+                        category: 'nature',
+                        description: '井冈山主峰海拔1597.6米，是井冈山的最高峰，因山峰形似五指而得名，是井冈山的标志性景观。',
+                        time: '建议游览：2-3小时',
+                        location: '茨坪景区',
+                        price: '包含在通票内'
+                    }
+                ];
+                
+                const container = document.getElementById('scenic-spots-container');
+                
+                newSpots.forEach(spot => {
+                    const card = document.createElement('div');
+                    card.className = 'bg-neutral rounded-xl overflow-hidden shadow-sm card-hover';
+                    card.setAttribute('data-category', spot.category);
+                    
+                    card.innerHTML = `
+                        <div class="relative h-60">
+                            <img src="${spot.image}" alt="${spot.name}" class="w-full h-full object-cover">
+                            <div class="absolute top-4 right-4 bg-${spot.category === 'history' ? 'secondary' : spot.category === 'nature' ? 'accent' : 'primary' } text-white text-xs font-bold px-3 py-1 rounded-full">
+                                ${spot.category === 'history' ? '红色景点' : spot.category === 'nature' ? '自然景观' : '人文景点'}
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3">${spot.name}</h3>
+                            <p class="text-gray-600 mb-4">${spot.description}</p>
+                            <div class="flex items-center text-sm text-gray-500 mb-4">
+                                <div class="flex items-center mr-4">
+                                    <i class="fa fa-clock-o mr-1"></i>
+                                    <span>${spot.time}</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fa fa-map-marker mr-1"></i>
+                                    <span>${spot.location}</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-primary font-bold">${spot.price}</span>
+                                <button class="view-details text-dark hover:text-primary transition-colors font-medium">
+                                    查看详情 <i class="fa fa-angle-right ml-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                    
+                    container.appendChild(card);
+                });
+                
+                // 重新绑定查看详情按钮事件
+                document.querySelectorAll('.view-details').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        modal.classList.remove('hidden');
+                        document.body.style.overflow = 'hidden';
+                    });
+                });
+                
+                // 隐藏加载更多按钮
+                loadMoreBtn.style.display = 'none';
+                
+                isLoading = false;
+            }, 1500);
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // 关闭移动端菜单
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        menuBtn.innerHTML = '<i class="fa fa-bars text-xl"></i>';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+    
