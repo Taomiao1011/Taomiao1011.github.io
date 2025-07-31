@@ -590,12 +590,6 @@
                     </div>
                 </div>
             </div>
-            
-            <div class="text-center mt-12">
-                <button id="load-more" class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-medium transition-colors shadow-sm">
-                    加载更多景点 <i class="fa fa-refresh ml-1"></i>
-                </button>
-            </div>
         </section>
 
         <!-- 推荐路线 -->
@@ -1177,49 +1171,7 @@
             }
         });
 
-        // 加载更多景点按钮
-        const loadMoreBtn = document.getElementById('load-more');
-        let isLoading = false;
-        
-        loadMoreBtn.addEventListener('click', () => {
-            if (isLoading) return;
-            
-            isLoading = true;
-            loadMoreBtn.innerHTML = '<i class="fa fa-spinner fa-spin mr-2"></i> 加载中...';
-            
-            // 模拟加载延迟
-            setTimeout(() => {
-                // 创建新景点
-                const newSpots = [
-                    {
-                        name: '笔架山景区',
-                        image: 'https://picsum.photos/id/1040/600/400',
-                        category: 'nature',
-                        description: '笔架山景区位于井冈山的西南面，以峰峦叠嶂、峡谷幽深、溪流清澈著称，是观云海、日出的绝佳地点。',
-                        time: '建议游览：3-4小时',
-                        location: '笔架山景区',
-                        price: '包含在通票内'
-                    },
-                    {
-                        name: '茅坪景区',
-                        image: 'https://picsum.photos/id/1041/600/400',
-                        category: 'history',
-                        description: '茅坪景区是井冈山革命根据地的重要组成部分，保存有大量革命历史遗迹，如八角楼、中共湘赣边界第一次代表大会会址等。',
-                        time: '建议游览：2小时',
-                        location: '茅坪景区',
-                        price: '包含在通票内'
-                    },
-                    {
-                        name: '井冈山主峰',
-                        image: 'https://picsum.photos/id/1042/600/400',
-                        category: 'nature',
-                        description: '井冈山主峰海拔1597.6米，是井冈山的最高峰，因山峰形似五指而得名，是井冈山的标志性景观。',
-                        time: '建议游览：2-3小时',
-                        location: '茨坪景区',
-                        price: '包含在通票内'
-                    }
-                ];
-                
+     
                 const container = document.getElementById('scenic-spots-container');
                 
                 newSpots.forEach(spot => {
