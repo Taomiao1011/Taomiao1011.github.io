@@ -48,7 +48,7 @@
         }
     </style>
 </head>
-<body class="font-sans text-dark bg-neutral scroll-smooth">
+<body class="font-sans text-dark bg-green scroll-smooth">
     <!-- 导航栏 -->
     <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-md shadow-sm">
         <div class="container mx-auto px-4 py-3 flex items-center justify-between">
@@ -88,13 +88,13 @@
 
     <!-- 英雄区域 -->
     <header class="relative h-screen flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-hero z-10"></div>
+        <div class="absolute inset-0 bg-red z-10"></div>
         <div class="absolute inset-0">
             <img src="https://ts1.tc.mm.bing.net/th/id/R-C.534c2837345e53772700622fec297cd1?rik=1T52wOWcMUvGcg&riu=http%3a%2f%2fwww.hnpictures.com%2fuploadpic%2f201112%2f2011120323544081.jpg&ehk=AhqcXaGX4MqeU83oksjx5CSlEMiVLFasYn0xsL3EYtY%3d&risl=&pid=ImgRaw&r=0" alt="井冈山风景" class="w-full h-full object-cover">
         </div>
-        <div class="container mx-auto px-4 z-20 text-center">
+        <div class="container mx-auto px-4 z-20 text-center ">
             <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold text-white mb-6 text-shadow animate-fade-in">
-                井冈山<br>革命圣地 · 绿色家园
+                井冈山<br>井冈红韵 · 翠色交融
             </h1>
             <p class="text-[clamp(1rem,2vw,1.25rem)] text-white/90 max-w-2xl mx-auto mb-8">
                 走进井冈山，感受红色历史与绿色生态的完美融合
@@ -115,26 +115,28 @@
         </div>
     </header>
 
-    <main class="container mx-auto px-4 py-16">
+    <main class="container mx-auto px-4 py-16 bg-green-50">
         <!-- 景区概况 -->
         <section id="about" class="py-16 scroll-mt-20">
             <div class="text-center mb-12">
                 <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">景区概况</h2>
-                <div class="w-20 h-1 bg-secondary mx-auto"></div>
+                <div class="w-10 h-10 bg-secondary rounded-full flex items-center justify-center mx-auto">
+                    <i class="fa fa-map-marker text-white"></i>
+                </div>
             </div>
             
-            <div class="grid md:grid-cols-2 gap-10 items-center">
+            <div class="grid gap-10 items-center"> <!-- 修改了这里的网格列设置 -->
                 <div class="space-y-6">
                     <p class="text-lg leading-relaxed">
-                        井冈山位于江西省吉安市境内，地处湘东赣西边界、南岭北支、罗霄山脉中段。井冈山风景名胜区是国家5A级旅游景区、国家级风景名胜区、国家级自然保护区，集人文景观、自然风光和高山田园为一体。
+                        井冈山，中国革命“红色摇篮”与“绿色宝库”的壮美交响。在罗霄山脉的脊梁上，“星星之火”点燃信仰之光，“千峰竞秀”铺展生态画卷。黄洋界云海翻涌历史炮声，龙潭飞瀑激荡时代回响；茨坪砖瓦凝固红军足迹，杜鹃花廊铺展岁月斑斓。
                     </p>
                     <p class="text-lg leading-relaxed">
-                        井冈山景区范围333平方公里，有11大景区、76处景点、460多个景物景观。这里千峰竞秀，万壑争流，苍茫林海，飞瀑流泉，有气势磅礴的云海、瑰丽灿烂的日出、十里绵延的杜鹃长廊和蜚声中外的井冈山主峰。
+                        十处圣地邀您穿越时空：踏上朱毛会师石阶，触摸“中国革命第一山”的赤色脉搏；漫步原始林海，聆听“绿色基因库”的生命礼赞。一座山，两种灵魂，在血火淬炼与山水交融中，铸就中华民族的精神图腾。
                     </p>
                     <div class="grid grid-cols-2 gap-4 mt-8">
                         <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-primary">
                             <h3 class="font-bold text-lg mb-2">地理位置</h3>
-                            <p>江西省吉安市井冈山市</p>
+                            <p>江西省吉安市井冈山市茨坪镇</p>
                         </div>
                         <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-secondary">
                             <h3 class="font-bold text-lg mb-2">景区面积</h3>
@@ -151,11 +153,11 @@
                     </div>
                 </div>
                 <div class="relative rounded-xl overflow-hidden shadow-xl">
-                    <img src="https://picsum.photos/id/1018/800/600" alt="井冈山全景" class="w-full h-auto rounded-xl">
+                                        <img src="https://dimg04.c-ctrip.com/images/0104h1200087crxznB165_R_1600_10000.jpg" alt="井冈山全景" class="w-full h-auto rounded-xl">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
                         <div class="p-6 text-white">
-                            <h3 class="text-xl font-bold mb-2">井冈山主峰</h3>
-                            <p>海拔1597.6米，井冈山的标志性景观</p>
+                            <h3 class="text-xl font-bold mb-2">井冈山火炬</h3>
+                            <p>井冈山的标志性景观</p>
                         </div>
                     </div>
                 </div>
@@ -163,14 +165,14 @@
         </section>
 
         <!-- 门票信息 -->
-        <section id="tickets" class="py-16 bg-white rounded-2xl shadow-sm scroll-mt-20">
+        <section id="tickets" class="py-16 bg-red rounded-2xl shadow-sm scroll-mt-20">
             <div class="text-center mb-12">
                 <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">门票信息</h2>
                 <div class="w-20 h-1 bg-secondary mx-auto"></div>
             </div>
             
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-neutral rounded-xl p-8 shadow-sm card-hover">
+                <div class="bg-blue-50 rounded-xl p-8 shadow-sm card-hover">
                     <div class="text-primary text-4xl mb-4">
                         <i class="fa fa-ticket"></i>
                     </div>
@@ -194,7 +196,7 @@
                         </li>
                     </ul>
                     <p class="text-sm text-gray-500 mb-6">
-                        11月16日—次年2月15日，执行淡季门票150元/人
+                        11月16日至次年2月15日，执行淡季门票150元/人
                     </p>
                 </div>
                 
@@ -229,11 +231,11 @@
                         </li>
                     </ul>
                     <p class="text-sm text-gray-500 mb-6">
-                        11月16日—次年2月15日，执行淡季价格230元/人
+                        11月16日至次年2月15日，执行淡季价格230元/人
                     </p>
                 </div>
                 
-                <div class="bg-neutral rounded-xl p-8 shadow-sm card-hover">
+                <div class="bg-blue-50 rounded-xl p-8 shadow-sm card-hover">
                     <div class="text-primary text-4xl mb-4">
                         <i class="fa fa-map-o"></i>
                     </div>
@@ -257,12 +259,12 @@
                         </li>
                     </ul>
                     <p class="text-sm text-gray-500 mb-6">
-                        如龙潭瀑布群、黄洋界哨口等景点可单独购票
+                        龙潭瀑布群、黄洋界哨口等景点可单独购票
                     </p>
                 </div>
             </div>
             
-            <div class="mt-16 bg-neutral rounded-xl p-8">
+            <div class="mt-16 bg-white rounded-xl p-8">
                 <h3 class="text-xl font-bold mb-6">购票须知</h3>
                 <div class="grid md:grid-cols-2 gap-8">
                     <div>
@@ -373,7 +375,7 @@
                             <li>运行时间：夏季7:00-18:00，冬季7:30-17:30</li>
                             <li>主要线路覆盖所有核心景点，班次频繁</li>
                         </ul>
-                        <div class="bg-neutral p-4 rounded-lg">
+                        <div class="bg-yellow-500 p-4 rounded-lg">
                             <p class="text-primary font-medium">重要提示：</p>
                             <p class="text-gray-600">景区实行交通管制，游客车辆进入景点实行总量管控，各景点停车场承载量达到峰值时，须将自带车辆停放在景区游客服务中心停车场或其他允许停车的场地，购买观光车票后换乘观光车进入景点。</p>
                         </div>
@@ -391,8 +393,8 @@
                     
                     <div class="mt-10">
                         <h4 class="font-bold text-lg mb-4">景区交通图</h4>
-                        <div class="bg-neutral rounded-xl p-6 h-80 flex items-center justify-center">
-                            <img src="https://picsum.photos/id/1048/800/400" alt="井冈山景区交通图" class="w-full h-full object-cover rounded-lg">
+                        <div class="bg-orange-88 rounded-xl p-6 h-80 flex items-center justify-center">
+                            <img src="https://ts1.tc.mm.bing.net/th/id/R-C.cc674ba62d9a7c770ab7ec556fddce30?rik=x52KIfkFz0ekHg&riu=http%3a%2f%2fp2.img.cctvpic.com%2f20091021%2fimages%2f1256106396231_1256106396231_r.jpg&ehk=8xjpwblzyqatbx70ED63Jqq9%2fxlHMpdBjbuvbL4ZJQM%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" alt="井冈山景区交通图" class="w-full h-full object-cover rounded-lg">
                         </div>
                     </div>
                 </div>
@@ -417,9 +419,9 @@
             <!-- 景点列表 -->
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="scenic-spots-container">
                 <!-- 景点1 -->
-                <div class="bg-neutral rounded-xl overflow-hidden shadow-sm card-hover" data-category="history">
+                <div class="bg-red-369 rounded-xl overflow-hidden shadow-sm card-hover" data-category="history">
                     <div class="relative h-60">
-                        <img src="https://picsum.photos/id/1015/600/400" alt="井冈山革命博物馆" class="w-full h-full object-cover">
+                        <img src="https://www.jgsgmbwg.com/robotAttach/showImg?id=1664469248025235457&imgSize=1600_1200" alt="井冈山革命博物馆" class="w-full h-full object-cover">
                         <div class="absolute top-4 right-4 bg-secondary text-white text-xs font-bold px-3 py-1 rounded-full">
                             红色景点
                         </div>
@@ -447,9 +449,9 @@
                 </div>
                 
                 <!-- 景点2 -->
-                <div class="bg-neutral rounded-xl overflow-hidden shadow-sm card-hover" data-category="history">
+                <div class="bg-black-50 rounded-xl overflow-hidden shadow-sm card-hover" data-category="history">
                     <div class="relative h-60">
-                        <img src="https://picsum.photos/id/1016/600/400" alt="井冈山革命烈士陵园" class="w-full h-full object-cover">
+                        <img src="https://ts1.tc.mm.bing.net/th/id/R-C.c7247859ab7dbfdd518db4eb810ec337?rik=HhdMj8und%2bEHdA&riu=http%3a%2f%2fimg.pconline.com.cn%2fimages%2fupload%2fupc%2ftx%2fphotoblog%2f1509%2f21%2fc11%2f12977642_12977642_1442825824329.jpg&ehk=mlBR1gMkoFSv4T7XIH3kQP1zWYRmcTaRb8Oza9xORhU%3d&risl=&pid=ImgRaw&r=0" alt="井冈山革命烈士陵园" class="w-full h-full object-cover">
                         <div class="absolute top-4 right-4 bg-secondary text-white text-xs font-bold px-3 py-1 rounded-full">
                             红色景点
                         </div>
@@ -477,9 +479,9 @@
                 </div>
                 
                 <!-- 景点3 -->
-                <div class="bg-neutral rounded-xl overflow-hidden shadow-sm card-hover" data-category="history">
+                <div class="bg-grey-500 rounded-xl overflow-hidden shadow-sm card-hover" data-category="history">
                     <div class="relative h-60">
-                        <img src="https://picsum.photos/id/1019/600/400" alt="茨坪毛泽东旧居" class="w-full h-full object-cover">
+                        <img src="https://ts3.tc.mm.bing.net/th/id/OIP-C.ZLj9M2mOU9yev8AAmvnoQwHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" class="w-full h-full object-cover">
                         <div class="absolute top-4 right-4 bg-secondary text-white text-xs font-bold px-3 py-1 rounded-full">
                             红色景点
                         </div>
@@ -507,9 +509,9 @@
                 </div>
                 
                 <!-- 景点4 -->
-                <div class="bg-neutral rounded-xl overflow-hidden shadow-sm card-hover" data-category="nature">
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm card-hover" data-category="nature">
                     <div class="relative h-60">
-                        <img src="https://picsum.photos/id/1039/600/400" alt="龙潭瀑布群" class="w-full h-full object-cover">
+                        <img src="https://youimg1.c-ctrip.com/target/100h10000000oxrl1B1DE.jpg" alt="龙潭瀑布群" class="w-full h-full object-cover">
                         <div class="absolute top-4 right-4 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full">
                             自然景观
                         </div>
@@ -537,9 +539,9 @@
                 </div>
                 
                 <!-- 景点5 -->
-                <div class="bg-neutral rounded-xl overflow-hidden shadow-sm card-hover" data-category="nature">
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm card-hover" data-category="nature">
                     <div class="relative h-60">
-                        <img src="https://picsum.photos/id/1043/600/400" alt="黄洋界" class="w-full h-full object-cover">
+                        <img src="https://ts2.tc.mm.bing.net/th/id/OIP-C.5rEtF0eXr-cbG15aOJ9LjQHaE7?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="黄洋界" class="w-full h-full object-cover">
                         <div class="absolute top-4 right-4 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full">
                             自然景观
                         </div>
@@ -567,9 +569,9 @@
                 </div>
                 
                 <!-- 景点6 -->
-                <div class="bg-neutral rounded-xl overflow-hidden shadow-sm card-hover" data-category="culture">
+                <div class="bg-yellow-555 rounded-xl overflow-hidden shadow-sm card-hover" data-category="culture">
                     <div class="relative h-60">
-                        <img src="https://picsum.photos/id/1050/600/400" alt="大井毛泽东旧居" class="w-full h-full object-cover">
+                        <img src="https://img-xhpfm.zhongguowangshi.com/News/202107/c7ac85636b6247c2bc4dca1bb0d1aea9.png?x-oss-process=image/resize,w_1000/auto-orient,1/quality,Q_80" alt="大井毛泽东旧居" class="w-full h-full object-cover">
                         <div class="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">
                             人文景点
                         </div>
@@ -721,11 +723,11 @@
                         </div>
                         
                         <div class="grid grid-cols-2 gap-4 mb-6">
-                            <div class="bg-neutral p-4 rounded-lg">
+                            <div class="bg-white p-4 rounded-lg">
                                 <h4 class="font-bold text-sm mb-2">第一天住宿</h4>
                                 <p class="text-gray-600 text-sm">推荐住在茨坪镇，交通便利，餐饮选择多</p>
                             </div>
-                            <div class="bg-neutral p-4 rounded-lg">
+                            <div class="bg-white p-4 rounded-lg">
                                 <h4 class="font-bold text-sm mb-2">第二天住宿</h4>
                                 <p class="text-gray-600 text-sm">可选择继续住在茨坪镇或返回市区</p>
                             </div>
@@ -754,7 +756,7 @@
                 <h3 class="text-xl font-bold mb-6">定制路线建议</h3>
                 
                 <div class="grid md:grid-cols-3 gap-8">
-                    <div class="bg-neutral p-6 rounded-lg">
+                    <div class="bg-white p-6 rounded-lg">
                         <div class="text-primary text-3xl mb-4">
                             <i class="fa fa-users"></i>
                         </div>
@@ -767,7 +769,7 @@
                         </a>
                     </div>
                     
-                    <div class="bg-neutral p-6 rounded-lg">
+                    <div class="bg-white p-6 rounded-lg">
                         <div class="text-primary text-3xl mb-4">
                             <i class="fa fa-heart"></i>
                         </div>
@@ -780,7 +782,7 @@
                         </a>
                     </div>
                     
-                    <div class="bg-neutral p-6 rounded-lg">
+                    <div class="bg-white p-6 rounded-lg">
                         <div class="text-primary text-3xl mb-4">
                             <i class="fa fa-camera"></i>
                         </div>
@@ -807,7 +809,7 @@
                 <div>
                     <h3 class="text-xl font-bold mb-6">最佳旅游时间</h3>
                     
-                    <div class="bg-neutral rounded-xl p-6 mb-8">
+                    <div class="bg-white rounded-xl p-6 mb-8">
                         <h4 class="font-bold text-lg mb-4">春季 (3-5月)</h4>
                         <p class="text-gray-600 mb-4">
                             春季是井冈山杜鹃花盛开的季节，漫山遍野的杜鹃花美不胜收，是观赏杜鹃花的最佳时间。
@@ -818,7 +820,7 @@
                         </div>
                     </div>
                     
-                    <div class="bg-neutral rounded-xl p-6 mb-8">
+                    <div class="bg-white rounded-xl p-6 mb-8">
                         <h4 class="font-bold text-lg mb-4">夏季 (6-8月)</h4>
                         <p class="text-gray-600 mb-4">
                             夏季井冈山气温凉爽，是避暑胜地，适合避暑和户外活动，但此时也是雨季，出行需携带雨具。
@@ -830,7 +832,7 @@
                         </div>
                     </div>
                     
-                    <div class="bg-neutral rounded-xl p-6 mb-8">
+                    <div class="bg-white rounded-xl p-6 mb-8">
                         <h4 class="font-bold text-lg mb-4">秋季 (9-11月)</h4>
                         <p class="text-gray-600 mb-4">
                             秋季天气晴朗，能见度高，适合观赏日出、云海等景观，也是登山的好时机。
@@ -842,7 +844,7 @@
                         </div>
                     </div>
                     
-                    <div class="bg-neutral rounded-xl p-6">
+                    <div class="bg-white rounded-xl p-6">
                         <h4 class="font-bold text-lg mb-4">冬季 (12-2月)</h4>
                         <p class="text-gray-600 mb-4">
                             冬季井冈山气温较低，有时会下雪，可以欣赏到雪景，但需注意保暖。
@@ -857,7 +859,7 @@
                 <div>
                     <h3 class="text-xl font-bold mb-6">注意事项</h3>
                     
-                    <div class="bg-neutral rounded-xl p-6 mb-8">
+                    <div class="bg-white rounded-xl p-6 mb-8">
                         <h4 class="font-bold text-lg mb-4 flex items-center">
                             <i class="fa fa-info-circle text-primary mr-2"></i>
                             景区游览注意
@@ -882,7 +884,7 @@
                         </ul>
                     </div>
                     
-                    <div class="bg-neutral rounded-xl p-6 mb-8">
+                    <div class="bg-white rounded-xl p-6 mb-8">
                         <h4 class="font-bold text-lg mb-4 flex items-center">
                             <i class="fa fa-suitcase text-primary mr-2"></i>
                             装备准备
@@ -907,7 +909,7 @@
                         </ul>
                     </div>
                     
-                    <div class="bg-neutral rounded-xl p-6 mb-8">
+                    <div class="bg-white rounded-xl p-6 mb-8">
                         <h4 class="font-bold text-lg mb-4 flex items-center">
                             <i class="fa fa-medkit text-primary mr-2"></i>
                             健康安全
@@ -932,7 +934,7 @@
                         </ul>
                     </div>
                     
-                    <div class="bg-neutral rounded-xl p-6">
+                    <div class="bg-white rounded-xl p-6">
                         <h4 class="font-bold text-lg mb-4 flex items-center">
                             <i class="fa fa-phone text-primary mr-2"></i>
                             紧急联系方式
